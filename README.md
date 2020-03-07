@@ -1,2 +1,2 @@
 # quasiCPU
-Um modelo didático de implementação da CPU
+Um modelo didático de implementação de uma CPU
