@@ -26,11 +26,11 @@
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <lib desc="file#/home/jamespll/quasiCPU/lib/c2_8bits.circ" name="7"/>
-  <lib desc="file#/home/jamespll/quasiCPU/lib/eq_8bits.circ" name="8"/>
-  <lib desc="file#/home/jamespll/quasiCPU/lib/mux_8bits.circ" name="9"/>
-  <lib desc="file#/home/jamespll/quasiCPU/lib/slt_8bits.circ" name="10"/>
-  <lib desc="file#/home/jamespll/quasiCPU/lib/sum_8bits.circ" name="11"/>
+  <lib desc="file#c2_8bits.circ" name="7"/>
+  <lib desc="file#eq_8bits.circ" name="8"/>
+  <lib desc="file#mux_8bits.circ" name="9"/>
+  <lib desc="file#slt_8bits.circ" name="10"/>
+  <lib desc="file#sum_8bits.circ" name="11"/>
   <main name="ULA"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -149,17 +149,23 @@
     <wire from="(240,340)" to="(240,460)"/>
     <wire from="(620,240)" to="(760,240)"/>
     <comp lib="8" loc="(440,450)" name="EQUAL"/>
-    <comp lib="0" loc="(850,270)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="S"/>
-      <a name="labelloc" val="east"/>
+    <comp lib="0" loc="(210,50)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Bneg"/>
     </comp>
-    <comp lib="0" loc="(590,580)" name="Constant">
-      <a name="facing" val="north"/>
+    <comp lib="7" loc="(180,380)" name="C2"/>
+    <comp lib="0" loc="(770,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="OP"/>
+    </comp>
+    <comp lib="1" loc="(440,320)" name="OR Gate">
       <a name="width" val="8"/>
-      <a name="value" val="0x0"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+      <a name="label" val="OR"/>
     </comp>
     <comp lib="1" loc="(440,250)" name="AND Gate">
       <a name="width" val="8"/>
@@ -167,17 +173,24 @@
       <a name="inputs" val="2"/>
       <a name="label" val="AND"/>
     </comp>
-    <comp lib="11" loc="(440,120)" name="SUM8bit"/>
-    <comp lib="1" loc="(440,320)" name="OR Gate">
-      <a name="width" val="8"/>
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
-      <a name="label" val="OR"/>
-    </comp>
     <comp lib="0" loc="(110,120)" name="Pin">
       <a name="width" val="8"/>
       <a name="tristate" val="false"/>
       <a name="label" val="A"/>
+    </comp>
+    <comp lib="11" loc="(440,120)" name="SUM8bit"/>
+    <comp lib="10" loc="(440,380)" name="SLT8bits"/>
+    <comp lib="0" loc="(590,580)" name="Constant">
+      <a name="facing" val="north"/>
+      <a name="width" val="8"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(850,270)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="S"/>
+      <a name="labelloc" val="east"/>
     </comp>
     <comp lib="9" loc="(790,270)" name="MUX16x1"/>
     <comp lib="0" loc="(110,340)" name="Pin">
@@ -185,19 +198,6 @@
       <a name="tristate" val="false"/>
       <a name="label" val="B"/>
     </comp>
-    <comp lib="10" loc="(440,380)" name="SLT8bits"/>
-    <comp lib="0" loc="(210,50)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Bneg"/>
-    </comp>
-    <comp lib="7" loc="(180,380)" name="C2"/>
     <comp lib="9" loc="(230,340)" name="MUX2x1"/>
-    <comp lib="0" loc="(770,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="width" val="4"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="OP"/>
-    </comp>
   </circuit>
 </project>
